@@ -1,0 +1,126 @@
+{
+	"name": "react-redux-saga-netoya",
+	"displayName": "react-redux-saga-netoya",
+	"description": "React Redux Saga extension for a Netoya's boilerplate",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.59.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:react-redux-saga-netoya.api.addFunction",
+		"onCommand:react-redux-saga-netoya.api.createFile",
+		"onCommand:react-redux-saga-netoya.constant.addConstant",
+		"onCommand:react-redux-saga-netoya.constant.createFile",
+		"onCommand:react-redux-saga-netoya.page.createFile",
+		"onCommand:react-redux-saga-netoya.project.createRootRoutesFile",
+		"onCommand:react-redux-saga-netoya.project.connectRootRoutesFile",
+		"onCommand:react-redux-saga-netoya.project.createRootReducerFile",
+		"onCommand:react-redux-saga-netoya.project.connectRootReducerFile",
+		"onCommand:react-redux-saga-netoya.project.createRootSagaFile",
+		"onCommand:react-redux-saga-netoya.project.connectRootSagaFile",
+		"onCommand:react-redux-saga-netoya.reducer.createFile",
+		"onCommand:react-redux-saga-netoya.reducer.addList",
+		"onCommand:react-redux-saga-netoya.route.add",
+		"onCommand:react-redux-saga-netoya.route.createFile",
+		"onCommand:react-redux-saga-netoya.saga.createFile"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "react-redux-saga-netoya.api.addFunction",
+				"title": "Api: add function"
+			},
+			{
+				"command": "react-redux-saga-netoya.api.createFile",
+				"title": "Api: create file"
+			},
+			{
+				"command": "react-redux-saga-netoya.constant.addConstant",
+				"title": "Constant: add constant"
+			},
+			{
+				"command": "react-redux-saga-netoya.constant.createFile",
+				"title": "Constant: create file"
+			},
+			{
+				"command": "react-redux-saga-netoya.page.createFile",
+				"title": "Page: create file"
+			},
+			{
+				"command": "react-redux-saga-netoya.project.createRootRoutesFile",
+				"title": "Project: create root routes file"
+			},
+			{
+				"command": "react-redux-saga-netoya.project.connectRootRoutesFile",
+				"title": "Project: connect root routes file"
+			},
+			{
+				"command": "react-redux-saga-netoya.project.createRootReducerFile",
+				"title": "Project: create root reducer file"
+			},
+			{
+				"command": "react-redux-saga-netoya.project.connectRootReducerFile",
+				"title": "Project: connect root reducer file"
+			},
+			{
+				"command": "react-redux-saga-netoya.project.createRootSagaFile",
+				"title": "Project: create root saga file"
+			},
+			{
+				"command": "react-redux-saga-netoya.project.connectRootSagaFile",
+				"title": "Project: connect root saga file"
+			},
+			{
+				"command": "react-redux-saga-netoya.reducer.createFile",
+				"title": "Reducer: create file"
+			},
+			{
+				"command": "react-redux-saga-netoya.reducer.addList",
+				"title": "Reducer: add list"
+			},
+			{
+				"command": "react-redux-saga-netoya.route.add",
+				"title": "Route: add route"
+			},
+			{
+				"command": "react-redux-saga-netoya.route.createFile",
+				"title": "Route: create file"
+			},
+			{
+				"command": "react-redux-saga-netoya.saga.createFile",
+				"title": "Saga: create file"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "yarn run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "14.x",
+		"@types/vscode": "^1.59.0",
+		"eslint": "^7.27.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2"
+	},
+	"dependencies": {
+		"@babel/generator": "^7.15.0",
+		"@babel/parser": "^7.15.3",
+		"acorn": "^8.4.1",
+		"acorn-jsx": "^5.3.2",
+		"astq": "^2.7.5",
+		"ejs": "^3.1.6",
+		"insert-line": "^1.1.0",
+		"readline": "^1.3.0",
+		"text-case": "^1.0.9"
+	}
+}

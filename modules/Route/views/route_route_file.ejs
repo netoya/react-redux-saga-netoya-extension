@@ -1,0 +1,13 @@
+import React from "react";
+import { Route, Switch } from "react-router";
+
+export const <%= moduleCapitalize %>Routes = ({ path }) => (
+    <Route
+        path={path}
+        render={({ match: { url } }) => (
+            <Switch>
+                <Route component={() => <div>Not found <%= module %></div>} />
+            </Switch>
+        )}
+    />
+);
