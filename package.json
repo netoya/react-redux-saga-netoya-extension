@@ -2,6 +2,7 @@
 	"name": "react-redux-saga-netoya",
 	"displayName": "react-redux-saga-netoya",
 	"description": "React Redux Saga extension for a Netoya's boilerplate",
+	"publisher": "netoya",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.59.0"

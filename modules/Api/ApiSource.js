@@ -72,7 +72,7 @@ module.exports = async (PROJECT_PATH, module) => {
       return apiFilePath;
     },
     // addApiFunction
-    async addApiFunction(name) {
+    async addApiFunction(name, url) {
       if (!this.exists(true)) {
         return;
       }
@@ -88,7 +88,7 @@ module.exports = async (PROJECT_PATH, module) => {
       });
 
       // Process
-      processFunction(parsedCode, module, name);
+      processFunction(parsedCode, module, name, url);
 
       // AST to code
       const code = generate(parsedCode, {

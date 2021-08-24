@@ -7,7 +7,7 @@ const {
   parseNodes,
 } = require("../parseFunctions");
 
-const processApi = (ast, module, name) => {
+const processApi = (ast, module, name, url) => {
   let astq = new ASTQ();
   astq.adapter("mozast");
 
@@ -31,9 +31,9 @@ const processApi = (ast, module, name) => {
   // Buscamos en el array agregar este codigo
   const newObject = parseObject(
     `{
-      async getList(params = {}){
+      async ${camelCase(name)}(params = {}){
         try {
-          let response = await fetch(\`/url\`, {
+          let response = await fetch(\`${url}\`, {
             method: 'POST',
             headers: {
               'Content-type': 'application/json',
@@ -69,8 +69,8 @@ const processApi = (ast, module, name) => {
   properties.sort((a, b) => a.key.name.localeCompare(b.key.name));
 };
 
-const processFunction = (ast, module, name) => {
-  processApi(ast, module, name);
+const processFunction = (ast, module, name, url) => {
+  processApi(ast, module, name, url);
 };
 
 exports.processFunction = processFunction;

@@ -67,15 +67,25 @@ const addApiFunction = async (PROJECT_PATH, module) => {
     // NAME
     let name = await vscode.window.showInputBox({
       value: "",
-      title: "Nombre de la variable lista",
+      title: "Nombre de la funcion",
     });
 
     if (!name) {
       return;
     }
 
+    // URL
+    let url = await vscode.window.showInputBox({
+      value: "${url}/",
+      title: "URL",
+    });
+
+    if (!url) {
+      return;
+    }
+
     let apiSource = await ApiSource(PROJECT_PATH, module);
-    await apiSource.addApiFunction(name);
+    await apiSource.addApiFunction(name, url);
 
     let apiFilePath = await apiSource.getPath();
 
