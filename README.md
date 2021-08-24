@@ -10,7 +10,7 @@ React Redux Saga extension for a Netoya's boilerplate.
 - Project: create root reducer
 - Project: create root saga
 
-![feature X](images/1 roots.gif)
+![feature X](images/1_roots.gif)
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
