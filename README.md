@@ -6,62 +6,50 @@ React Redux Saga extension for a Netoya's boilerplate.
 
 ### Roots.
 
-- Project: create root route
-- Project: create root reducer
-- Project: create root saga
+- Project: create root route.
+- Project: create root reducer.
+- Project: create root saga.
 
-![feature X](images/1_roots.gif)
+![roots](images/1_root.gif)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Modules Handles (Routes Reducer Saga).
 
-## Requirements
+- Reducer: create file
+- Route: create file
+- Saga: create file
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+![modules_handlers](images/2_modules_handlers.gif)
 
-## Extension Settings
+### Connect Modules Handles (Routes Reducer Saga).
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+- Project: connect root routes file
+  ![3_module_route_to_root](images/3_module_route_to_root.gif)
+- Project: connect root reducer file
+  ![5_module_reducer_to_root](images/5_module_reducer_to_root.gif)
+- Project: connect root saga file
+  ![6_module_saga_to_root](images/6_module_saga_to_root.gif)
 
-For example:
+### Page.
 
-This extension contributes the following settings:
+- Page: create file
+  ![1_page_create](images/3-1_page_create.gif)
+- Route: add route
+  ![2_page_to_route](images/3-2_page_to_route.gif)
 
-- `myExtension.enable`: enable/disable this extension
-- `myExtension.thing`: set to `blah` to do something
+### Constant.
 
-## Known Issues
+- Constant: create file
+- Constant: add constant
+  ![4_constants](images/4_constants.gif)
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### Reducer.
 
-## Release Notes
+- Reducer: add list
+  ![1_reducer_list](images/5-1_reducer_list.gif)
 
-Users appreciate release notes as you update your extension.
+### Api.
 
-### 1.0.0
+- Api: create file
+- Api: add function
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-- Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-- Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+![7_api](images/7_api.gif)
