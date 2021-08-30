@@ -23,6 +23,7 @@ const {
   addConstant,
 } = require("./modules/Constants/ConstantCommands");
 const { addApiFunction, createApiFile } = require("./modules/Api/ApiCommands");
+const { mainMenuChoice } = require("./modules/Menu/MenuCommands");
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -59,6 +60,14 @@ async function activate(context) {
     vscode.commands.registerCommand(
       "react-redux-saga-netoya.constant.addConstant",
       addConstant
+    )
+  );
+
+  // MAIN
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "react-redux-saga-netoya.main.menuChoice",
+      mainMenuChoice
     )
   );
 
