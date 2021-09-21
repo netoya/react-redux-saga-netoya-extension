@@ -1,11 +1,11 @@
 const { camelCase } = require("text-case");
-const { astRender } = require("../../../lib/ast_engine/ast_engine");
+const { astRender } = require("../../../../lib/ast_engine/ast_engine");
 const {
   parseFile,
   get,
   parseCode,
   saveFile,
-} = require("../../../lib/ast_engine/types");
+} = require("../../../../lib/ast_engine/types");
 
 const render = function* ({ path, module_name }) {
   // Read Files
@@ -50,11 +50,13 @@ const render = function* ({ path, module_name }) {
     a.callee.name.localeCompare(b.callee.name)
   );
 
-  // Save File
-  yield saveFile(__dirname + "/output.js", ast);
+  /**
+   * Save
+   */
+  yield saveFile(path, ast);
 };
 
-const processRootSaga = (path, module_name) => {
+const processConnectRootSaga = (path, module_name) => {
   let script = render({
     path,
     module_name,
@@ -63,4 +65,4 @@ const processRootSaga = (path, module_name) => {
   astRender(script);
 };
 
-exports.processRootSaga = processRootSaga;
+exports.processConnectRootSaga = processConnectRootSaga;

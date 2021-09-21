@@ -1,5 +1,5 @@
 {
-	"name": "react-redux-saga-netoya",
+	"name": "react-redux-saga-netoya-extension",
 	"displayName": "React Redux Saga for Netoya's Boilerplate",
 	"description": "React Redux Saga extension for Netoya's boilerplate",
 	"publisher": "netoya",
@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "https://github.com/netoya/react-redux-saga-netoya-extension.git"
 	},
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.59.0"
 	},

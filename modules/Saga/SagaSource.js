@@ -8,7 +8,13 @@ const generate = require("@babel/generator").default;
 const ModulesSource = require("../Modules/ModulesSource");
 const { pascalCase, camelCase } = require("text-case");
 const ProjectSource = require("../Project/ProjectSource");
-const { processRootSaga } = require("./SagaProccessRootSaga");
+const {
+  processConnectRootSaga,
+} = require("./processors/saga_connect_root_saga");
+const { processCreateRootFile } = require("./processors/saga_create_root_file");
+const {
+  processCreateModuleFile,
+} = require("./processors/saga_create_module_file");
 
 module.exports = async (PROJECT_PATH, module) => {
   let moduleSource = null;
@@ -36,18 +42,7 @@ module.exports = async (PROJECT_PATH, module) => {
 
       let rootSagaFilePath = rootsPath + "/rootSaga.js";
 
-      if (!(await fs.existsSync(PROJECT_PATH + rootSagaFilePath))) {
-        let sagaRootSagaFile = await ejs.renderFile(
-          "saga_root_saga_file.ejs",
-          {},
-          { async: true }
-        );
-
-        await fs.writeFileSync(
-          PROJECT_PATH + rootSagaFilePath,
-          sagaRootSagaFile
-        );
-      }
+      processCreateRootFile(PROJECT_PATH + rootSagaFilePath);
 
       return rootSagaFilePath;
     },
@@ -88,13 +83,8 @@ module.exports = async (PROJECT_PATH, module) => {
 
       await moduleSource.createHandlersFolder(module);
 
-      let sagaSagaPage = await ejs.renderFile(
-        "saga_saga_file.ejs",
-        { module: camelCase(module), moduleCapitalize: pascalCase(module) },
-        { async: true }
-      );
-
-      await fs.writeFileSync(PROJECT_PATH + sagaFilePath, sagaSagaPage);
+      //
+      processCreateModuleFile(PROJECT_PATH + sagaFilePath, module);
 
       return sagaFilePath;
     },
@@ -105,28 +95,8 @@ module.exports = async (PROJECT_PATH, module) => {
         return;
       }
 
-      let data = await fs
-        .readFileSync(PROJECT_PATH + rootSagaFilePath)
-        .toString();
-
-      // Code to AST
-      const parsedCode = babelParser.parse(data, {
-        sourceType: "module",
-        plugins: ["jsx", "flow"],
-      });
-
       // Process
-      processRootSaga(parsedCode, module);
-
-      // AST to code
-      const code = generate(parsedCode, {
-        retainLines: false,
-        concise: false,
-
-        // retainFunctionParens: true,
-      });
-
-      await fs.writeFileSync(PROJECT_PATH + rootSagaFilePath, code.code);
+      processConnectRootSaga(PROJECT_PATH + rootSagaFilePath, module);
 
       return rootSagaFilePath;
     },

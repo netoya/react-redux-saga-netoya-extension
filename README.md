@@ -2,6 +2,18 @@
 
 React Redux Saga extension for a Netoya's boilerplate.
 
+## Requirement
+
+### Base project
+
+Clone the base project required for this extension
+
+_Change ***your-project-name*** to your real project name._
+
+```
+git clone https://github.com/netoya/react-redux-saga-netoya your-project-name
+```
+
 ## Features
 
 ### Roots.

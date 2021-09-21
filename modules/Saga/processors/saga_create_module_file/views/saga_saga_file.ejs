@@ -1,9 +1,10 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { all, call, put, takeLatest } from "redux-saga/effects";
 import {
   _SUCCESS,
 } from "./constants";
 
 function* <%= module %>Saga() {
+  yield all([]);
 }
 
 

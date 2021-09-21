@@ -5,7 +5,7 @@ const {
   parseObject,
   parseNode,
   parseNodes,
-} = require("../parseFunctions");
+} = require("../../../parseFunctions");
 
 const processConstants = (ast, name) => {
   let astq = new ASTQ();

@@ -7,7 +7,7 @@ const generate = require("@babel/generator").default;
 
 const ModulesSource = require("../Modules/ModulesSource");
 const { pascalCase, camelCase } = require("text-case");
-const { processList } = require("./ReducerProccessList");
+const { processList } = require("./processors/reducer_list");
 const ProjectSource = require("../Project/ProjectSource");
 const { processRootReducer } = require("./ReducerProccessRootReducer");
 
