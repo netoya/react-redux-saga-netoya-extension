@@ -24,6 +24,7 @@ const {
 } = require("./modules/Constants/ConstantCommands");
 const { addApiFunction, createApiFile } = require("./modules/Api/ApiCommands");
 const { mainMenuChoice } = require("./modules/Menu/MenuCommands");
+const { createComponentFile } = require("./modules/Components/ComponentsCommands");
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -45,6 +46,14 @@ async function activate(context) {
     vscode.commands.registerCommand(
       "react-redux-saga-netoya.api.addFunction",
       addApiFunction
+    )
+  );
+
+  // COMPONENT
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "react-redux-saga-netoya.component.createFile",
+      createComponentFile
     )
   );
 

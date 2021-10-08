@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "https://github.com/netoya/react-redux-saga-netoya-extension.git"
 	},
-	"version": "0.0.2",
+	"version": "0.3.0",
 	"engines": {
 		"vscode": "^1.59.0"
 	},
@@ -17,6 +17,7 @@
 	"activationEvents": [
 		"onCommand:react-redux-saga-netoya.api.addFunction",
 		"onCommand:react-redux-saga-netoya.api.createFile",
+		"onCommand:react-redux-saga-netoya.component.createFile",
 		"onCommand:react-redux-saga-netoya.constant.addConstant",
 		"onCommand:react-redux-saga-netoya.constant.createFile",
 		"onCommand:react-redux-saga-netoya.main.menuChoice",
@@ -43,6 +44,10 @@
 			{
 				"command": "react-redux-saga-netoya.api.createFile",
 				"title": "Api: create file"
+			},
+			{
+				"command": "react-redux-saga-netoya.component.createFile",
+				"title": "Component: create file"
 			},
 			{
 				"command": "react-redux-saga-netoya.constant.addConstant",
